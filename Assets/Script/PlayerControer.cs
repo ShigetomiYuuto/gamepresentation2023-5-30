@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerControer : MonoBehaviour
 {
-    private Rigidbody2D _rb;
     [SerializeField] private float _moveSpeed = 3;
+    private Rigidbody2D _rb = null;
     private Vector2 _moveInput;
     void Start()
     {
