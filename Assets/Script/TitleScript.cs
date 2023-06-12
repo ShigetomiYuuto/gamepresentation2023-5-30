@@ -9,7 +9,6 @@ public class TitleScript : MonoBehaviour
     [SerializeField] Color SelectColor = Color.white;
     [SerializeField] UnityEvent Onstart;
     [SerializeField] UnityEvent Onend;
-
     int index = 0;
 
     // Start is called before the first frame update

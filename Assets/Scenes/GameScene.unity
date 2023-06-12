@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 807152742}
   m_Layer: 0
   m_Name: groundchecker
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0463fade20f33524e863f9e8f5e22922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isGround: 0
 --- !u!1 &1049607458
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +405,7 @@ GameObject:
   - component: {fileID: 1712868090}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,7 +430,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1712868087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -536,4 +537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a36db05266812b41b5a35fcdc5cc8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 10
+  _moveSpeed: 50
+  ground: {fileID: 807152742}
+  _jumpPower: 7
+  _isJumping: 0
+  gravity: 0

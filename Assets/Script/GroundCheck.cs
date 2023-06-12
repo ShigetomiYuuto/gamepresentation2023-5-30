@@ -4,29 +4,50 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    private string groundTag = "Ground";
+    private string _groundTag = "Ground";
+    public bool _isGround = false;
+    private bool isGroundEnter, isGroundStay, isGroundExit;
 
+    public bool IsGround()
+    {
+        if (isGroundEnter || isGroundStay)
+        {
+            _isGround = true;
+        }
+        else if (isGroundExit)
+        {
+            _isGround = false;
+        }
+
+        isGroundEnter = false;
+        isGroundStay = false;
+        isGroundExit = false;
+        return _isGround;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == groundTag)
+        if (collision.tag == _groundTag)
         {
-            Debug.Log("‰½‚©‚ª”»’è‚É“ü‚è‚Ü‚µ‚½");
+            isGroundEnter = true;
+            Debug.Log("”»’è‚É“ü‚Á‚½");
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == groundTag)
+        if (collision.tag == _groundTag)
         {
-            Debug.Log("‰½‚©‚ª”»’è‚É“ü‚è‘±‚¯‚Ä‚¢‚Ü‚·");
+            isGroundStay = true;
+            Debug.Log("”»’è‚É“ü‚Á‚Ä‚¢‚é");
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == groundTag)
+        if (collision.tag == _groundTag)
         {
-            Debug.Log("‰½‚©‚ª”»’è‚ð‚Å‚Ü‚µ‚½");
+            isGroundExit = true;
+            Debug.Log("”»’è‚©‚ç”²‚¯‚½");
         }
     }
 }
