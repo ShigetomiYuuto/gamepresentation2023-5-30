@@ -3,30 +3,30 @@
     "maps": [
         {
             "name": "Player",
-            "id": "5758a718-ddb3-443f-a65d-90b8399e1ec7",
+            "id": "62e1ba97-6dc8-4b0a-9fc4-f14d70a732dc",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "0de2b0db-69a0-479e-9838-4ad97a2b2a7d",
+                    "id": "b754fbc7-a42e-4f2d-a6a1-cefb17272adc",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
-                    "type": "Value",
-                    "id": "57623f56-168b-4a3c-af47-f3680407768b",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Fire",
+                    "name": "Jump",
                     "type": "Button",
-                    "id": "9c56c4cf-514a-4f0d-810b-0f95cc7d3b3c",
+                    "id": "02b2ade3-b8e1-4705-8b2b-0642dc3686fa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "8e279e58-3b07-4104-b69b-3b9853f2d7fb",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -168,89 +168,23 @@
                 },
                 {
                     "name": "",
-                    "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "0c68e7d9-5df4-4f95-94a6-0b9618a1d328",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Look",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "8c8e490b-c610-4785-884f-f04217b23ca4",
-                    "path": "<Pointer>/delta",
+                    "id": "28b3a4ef-a72c-4043-9225-1984c01cd9fc",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse;Touch",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3e5f5442-8668-4b27-a940-df99bad7e831",
-                    "path": "<Joystick>/{Hatswitch}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "886e731e-7071-4ae4-95c0-e61739dad6fd",
-                    "path": "<Touchscreen>/primaryTouch/tap",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Touch",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ee3d0cd2-254e-47a7-a8cb-bc94d9658c54",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8255d333-5683-4943-a58a-ccb207ff1dce",
-                    "path": "<XRController>/{PrimaryAction}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XR",
-                    "action": "Fire",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -258,12 +192,12 @@
         },
         {
             "name": "UI",
-            "id": "e9a2e64b-77db-45f9-8bc6-d6c3f58b4c1b",
+            "id": "9429092a-2a0b-400b-9a12-b60b3ddd430e",
             "actions": [
                 {
                     "name": "Navigate",
                     "type": "PassThrough",
-                    "id": "6e3489fc-e717-4160-ab1d-c196e32c37b0",
+                    "id": "7a17daec-9213-4bdb-9745-c3562cbc69ee",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -272,7 +206,7 @@
                 {
                     "name": "Submit",
                     "type": "Button",
-                    "id": "9674f409-3ecc-4ea0-9475-7db181387725",
+                    "id": "b60d38cb-4911-403a-bd06-b1b1e7c4967f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -281,7 +215,7 @@
                 {
                     "name": "Cancel",
                     "type": "Button",
-                    "id": "e0c8340a-45f4-4e4d-a378-9d96625e6bca",
+                    "id": "0617fdd6-e5a6-4899-b754-3488d88da381",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -290,7 +224,7 @@
                 {
                     "name": "Point",
                     "type": "PassThrough",
-                    "id": "850851b2-035d-4847-a160-d731bdedec59",
+                    "id": "ea9cab66-9269-4b5e-ab07-5a0afc90943b",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -299,7 +233,7 @@
                 {
                     "name": "Click",
                     "type": "PassThrough",
-                    "id": "e6a68493-f940-4b17-81f5-124e606b0d21",
+                    "id": "a0189218-61a0-4ae4-a32b-240052ed7184",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -308,7 +242,7 @@
                 {
                     "name": "ScrollWheel",
                     "type": "PassThrough",
-                    "id": "8307ba56-9086-4893-aafb-12942e770b6b",
+                    "id": "b3ef8d19-6890-45d6-8af6-b5b9ffb5d7ac",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -317,7 +251,7 @@
                 {
                     "name": "MiddleClick",
                     "type": "PassThrough",
-                    "id": "e282dffa-3c1a-437c-8598-33351a1ae9b8",
+                    "id": "db59a3f2-ff4a-42bb-ba44-726b9b031052",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -326,7 +260,7 @@
                 {
                     "name": "RightClick",
                     "type": "PassThrough",
-                    "id": "88289e64-c212-496e-8123-42c8db161b3c",
+                    "id": "ce7972c6-59ee-4b68-a7c5-74dad9e92466",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -335,7 +269,7 @@
                 {
                     "name": "TrackedDevicePosition",
                     "type": "PassThrough",
-                    "id": "b32b5f80-8454-4abb-aa1b-268128ba72e6",
+                    "id": "3882ace0-8e90-4359-b2a3-8301e66ed3f9",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
@@ -344,7 +278,7 @@
                 {
                     "name": "TrackedDeviceOrientation",
                     "type": "PassThrough",
-                    "id": "bceb3bfc-f559-4f7b-8e39-47b662326e3b",
+                    "id": "79f3610c-131c-4851-afb5-5166e1e5d2f2",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",

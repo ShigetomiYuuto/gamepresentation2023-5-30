@@ -6,7 +6,6 @@ public class GroundCheck : MonoBehaviour
 {
     private string _groundTag = "Ground";
     public bool _isGround = false;
-    private bool isGroundEnter, isGroundStay, isGroundExit;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

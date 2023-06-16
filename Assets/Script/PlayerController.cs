@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +13,9 @@ public class PlayerController : MonoBehaviour
     //ジャンプ
     [SerializeField] private float _jumpSpeed;
 
+    //体力
+    [SerializeField] private int _hp;
+
     //入力された値を入れる変数
     [SerializeField] private Vector2 _moveInput;
 
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     //ダッシュする時間
     [SerializeField] private float _dashindTime = 0.5f;
 
-    private float _Inputdash;
+    //private float _Inputdash;
 
     //ダッシュの方向を保存している？
     private Vector2 _dashingDir;
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
     //変な線が出るやつ
     private TrailRenderer _trailRenderer;
+
+    private bool _Inputdash;
 
     public bool _isJumping = false;
 
@@ -56,10 +59,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    //private void Update()
-    //{
-            
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Traps")
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -68,6 +74,13 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();
         Dash();
+        //Debug.Log(_hp);
+    }
+    private IEnumerator StopDashing()
+    {
+        yield return new WaitForSeconds(_dashindTime);
+        _trailRenderer.emitting = false;
+        _isDashing = false;
     }
 
     void Move()
@@ -78,20 +91,20 @@ public class PlayerController : MonoBehaviour
     {
         if (_isGrounded && _isJumping)
         {
-            _rb.AddForce(Vector2.up * _jumpSpeed,ForceMode2D.Impulse);
+            _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
         }
     }
 
     void Dash()
     {
-        //var input = Keyboard.current;
-        //if (input == null) return;
+        var input = Keyboard.current;
+        if (input == null) return;
 
         //var Enter = input.enterKey;
-        // var dashInput:bool = Input.GetButtonDown("Dash");
+        //var dashInput = Input.GetButtonDown("Dash");
         // inputx:bool = Input.GetAxisRaw("Horizontal");
 
-        if (/*Enter.wasPressedThisFrame*/  _canDash)
+        if (_Inputdash && _canDash)
         {
             _isDashing = true;
             _canDash = false;
@@ -104,8 +117,6 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(routine: StopDashing());
         }
 
-
-
         if (_isDashing)
         {
             _rb.velocity = _dashingDir.normalized * _dashingVelocity;
@@ -117,20 +128,12 @@ public class PlayerController : MonoBehaviour
             _canDash = true;
         }
     }
-
-    private IEnumerator StopDashing()
-    {
-        yield return new WaitForSeconds(_dashindTime);
-        _trailRenderer.emitting = false;
-        _isDashing = false;
-    }
-
     //入力系統
     public void OnMove(InputAction.CallbackContext context)
     {
         _moveInput = context.ReadValue<Vector2>();
     }
-    
+
     public void OnJump(InputAction.CallbackContext context)
     {
         _isJumping = context.ReadValueAsButton();
@@ -138,6 +141,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        _isDashing = context.ReadValueAsButton();
+        _Inputdash = context.ReadValueAsButton();
+    }
+
+    public void Daage (int damage)
+    {
+        _hp = Mathf.Max(_hp - damage,0);
     }
 }
