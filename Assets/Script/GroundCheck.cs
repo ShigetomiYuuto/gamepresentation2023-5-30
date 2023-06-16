@@ -6,30 +6,14 @@ public class GroundCheck : MonoBehaviour
 {
     private string _groundTag = "Ground";
     public bool _isGround = false;
-    private bool isGroundEnter, isGroundStay, isGroundExit;
 
-    public bool IsGround()
-    {
-        if (isGroundEnter || isGroundStay)
-        {
-            _isGround = true;
-        }
-        else if (isGroundExit)
-        {
-            _isGround = false;
-        }
-
-        isGroundEnter = false;
-        isGroundStay = false;
-        isGroundExit = false;
-        return _isGround;
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == _groundTag)
         {
-            isGroundEnter = true;
+            _isGround = true;
             Debug.Log("”»’è‚É“ü‚Á‚½");
+            Debug.Log($"{_isGround}");
         }
     }
 
@@ -37,8 +21,8 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.tag == _groundTag)
         {
-            isGroundStay = true;
-            Debug.Log("”»’è‚É“ü‚Á‚Ä‚¢‚é");
+            //_isGround = true;
+            //Debug.Log("”»’è‚É“ü‚Á‚Ä‚¢‚é");
         }
     }
 
@@ -46,7 +30,7 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.tag == _groundTag)
         {
-            isGroundExit = true;
+            _isGround = false;
             Debug.Log("”»’è‚©‚ç”²‚¯‚½");
         }
     }
