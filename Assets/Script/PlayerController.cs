@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     //ダッシュする時間
     [SerializeField] private float _dashindTime = 0.5f;
 
-    //private float _Inputdash;
+    [SerializeField] private float _jumpForce = 10f;
 
     //ダッシュの方向を保存している？
     private Vector2 _dashingDir;
@@ -65,16 +65,19 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Spring"))
+        {
+            _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+        }
     }
 
     private void FixedUpdate()
     {
         _isGrounded = _ground._isGround;//接地判定のコンディションの代入
-        //Debug.Log($"Player Condition Grounded IS {_isGrounded}");
         Move();
         Jump();
         Dash();
-        //Debug.Log(_hp);
     }
     private IEnumerator StopDashing()
     {
