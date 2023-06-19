@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Traps
+  - GroundChecker
+  - Spring
   layers:
   - Default
   - TransparentFX
