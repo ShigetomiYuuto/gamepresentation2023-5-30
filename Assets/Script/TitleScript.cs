@@ -11,6 +11,10 @@ public class TitleScript : MonoBehaviour
     [SerializeField] UnityEvent Onend;
     int index = 0;
 
+    public AudioClip _sound1;
+    public AudioClip _sound2;
+    AudioSource _audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,8 @@ public class TitleScript : MonoBehaviour
         }
 
         images[0].color = SelectColor;
+
+        _audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -44,6 +50,8 @@ public class TitleScript : MonoBehaviour
             }
 
             images[index].color = SelectColor;
+
+            _audioSource.PlayOneShot(_sound1);
         }
 
         if (d.wasPressedThisFrame)
@@ -57,10 +65,14 @@ public class TitleScript : MonoBehaviour
             }
 
             images[index].color = SelectColor;
+
+            _audioSource.PlayOneShot(_sound1);
         }
 
         if (space.wasPressedThisFrame)
         {
+            _audioSource.PlayOneShot(_sound2);
+
             switch (index)
             {
                 case 0:

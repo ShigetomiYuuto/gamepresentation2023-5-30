@@ -1025,6 +1025,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2419300904042909940, guid: 2259faf7a1dec714b9ed678c39745397, type: 3}
+      propertyPath: _sound2
+      value: 
+      objectReference: {fileID: 8300000, guid: 73dc343ed9200d14db412dfa9bdd4543, type: 3}
+    - target: {fileID: 2419300904042909940, guid: 2259faf7a1dec714b9ed678c39745397, type: 3}
+      propertyPath: _sound4
+      value: 
+      objectReference: {fileID: 8300000, guid: 15fb32c858f19924999b7af2f856ab38, type: 3}
     - target: {fileID: 2419300904042909943, guid: 2259faf7a1dec714b9ed678c39745397, type: 3}
       propertyPath: m_RootOrder
       value: 8

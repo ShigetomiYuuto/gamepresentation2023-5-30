@@ -8,10 +8,10 @@ public class Replayplayer : MonoBehaviour
     [Tooltip("ƒvƒŒƒCƒ„[‚Ìprefab‚ğ’Ç‰Á")] private GameObject playerPrefab;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    //void Start()
+    //{
         
-    }
+    //}
 
     // Update is called once per frame
     void Update()

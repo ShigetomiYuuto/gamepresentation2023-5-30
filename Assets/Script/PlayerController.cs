@@ -51,7 +51,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject _gameManager = null;
 
-    //[SerializeField] GameObject _PauseUI = null;
+    public AudioClip _sound1;
+    public AudioClip _sound2;
+    public AudioClip _sound3;
+    AudioSource _audioSource;
 
     void Start()
     {
@@ -60,6 +63,8 @@ public class PlayerController : MonoBehaviour
 
         //TrailRenderer‚ðŽæ“¾‚µ‚Ä‚¢‚é
         _trailRenderer = GetComponent<TrailRenderer>();
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -98,6 +103,7 @@ public class PlayerController : MonoBehaviour
         if (_isGrounded && _isJumping)
         {
             _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+            _audioSource.PlayOneShot(_sound2);
         }
     }
 
@@ -112,6 +118,8 @@ public class PlayerController : MonoBehaviour
             _canDash = false;
             _trailRenderer.emitting = true;
             _dashingDir = new Vector2(_moveInput.x,_moveInput.y);
+            _audioSource.PlayOneShot(_sound3);
+
             if (_dashingDir == Vector2.zero)
             {
                 _dashingDir = new Vector2(transform.localScale.x, y: 0);
@@ -121,8 +129,10 @@ public class PlayerController : MonoBehaviour
 
         if (_isDashing)
         {
+
             _rb.velocity = _dashingDir.normalized * _dashingVelocity;
             return;
+
         }
 
         if (_isGrounded)
@@ -151,6 +161,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnPause(InputAction.CallbackContext context)
     {
+        _audioSource.PlayOneShot(_sound1);
         if (_gameManager.GetComponent<GameManager>()._isPaused)
         {
             _gameManager.GetComponent<GameManager>()._isPaused = false;
