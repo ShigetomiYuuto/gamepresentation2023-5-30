@@ -49,6 +49,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject _groundChecker = null;
 
+    [SerializeField] GameObject _gameManager = null;
+
+    public AudioClip _sound1;
+    public AudioClip _sound2;
+    public AudioClip _sound3;
+    AudioSource _audioSource;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -57,6 +64,7 @@ public class PlayerController : MonoBehaviour
         //TrailRendererÇéÊìæÇµÇƒÇ¢ÇÈ
         _trailRenderer = GetComponent<TrailRenderer>();
 
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,6 +103,7 @@ public class PlayerController : MonoBehaviour
         if (_isGrounded && _isJumping)
         {
             _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+            _audioSource.PlayOneShot(_sound2);
         }
     }
 
@@ -103,16 +112,14 @@ public class PlayerController : MonoBehaviour
         var input = Keyboard.current;
         if (input == null) return;
 
-        //var Enter = input.enterKey;
-        //var dashInput = Input.GetButtonDown("Dash");
-        // inputx:bool = Input.GetAxisRaw("Horizontal");
-
         if (_Inputdash && _canDash)
         {
             _isDashing = true;
             _canDash = false;
             _trailRenderer.emitting = true;
             _dashingDir = new Vector2(_moveInput.x,_moveInput.y);
+            _audioSource.PlayOneShot(_sound3);
+
             if (_dashingDir == Vector2.zero)
             {
                 _dashingDir = new Vector2(transform.localScale.x, y: 0);
@@ -122,8 +129,10 @@ public class PlayerController : MonoBehaviour
 
         if (_isDashing)
         {
+
             _rb.velocity = _dashingDir.normalized * _dashingVelocity;
             return;
+
         }
 
         if (_isGrounded)
@@ -131,6 +140,9 @@ public class PlayerController : MonoBehaviour
             _canDash = true;
         }
     }
+
+    #region  ì¸óÕånìù
+
     //ì¸óÕånìù
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -146,6 +158,24 @@ public class PlayerController : MonoBehaviour
     {
         _Inputdash = context.ReadValueAsButton();
     }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        _audioSource.PlayOneShot(_sound1);
+        if (_gameManager.GetComponent<GameManager>()._isPaused)
+        {
+            _gameManager.GetComponent<GameManager>()._isPaused = false;
+            Time.timeScale = 1;
+            
+        }
+        else
+        {
+            _gameManager.GetComponent<GameManager>()._isPaused = true;
+            Time.timeScale = 0;   
+        }
+    }
+
+    #endregion
 
     public void Daage (int damage)
     {
