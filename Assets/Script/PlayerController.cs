@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     //•Ï‚Èü‚ªo‚é‚â‚Â
     private TrailRenderer _trailRenderer;
 
-    private bool _Inputdash;
+    private bool _inputDash;
 
     public bool _isJumping = false;
 
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
         var input = Keyboard.current;
         if (input == null) return;
 
-        if (_Inputdash && _canDash)
+        if (_inputDash && _canDash)
         {
             _isDashing = true;
             _canDash = false;
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        _Inputdash = context.ReadValueAsButton();
+        _inputDash = context.ReadValueAsButton();
     }
 
     public void OnPause(InputAction.CallbackContext context)
