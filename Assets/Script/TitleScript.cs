@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.Windows;
 
 public class TitleScript : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class TitleScript : MonoBehaviour
 
         var a = input.aKey;
         var d = input.dKey;
-        var space = input.spaceKey;
+        space();
 
         if (a.wasPressedThisFrame)
         {
@@ -68,25 +69,32 @@ public class TitleScript : MonoBehaviour
 
             _audioSource.PlayOneShot(_sound1);
         }
+    }
+
+    void space()
+    {
+        var input = Keyboard.current;
+        if (input == null) return;
+        var space = input.spaceKey;
 
         if (space.wasPressedThisFrame)
         {
-            _audioSource.PlayOneShot(_sound2);
 
             switch (index)
             {
                 case 0:
                     Debug.Log("start");
                     Onstart.Invoke();
+                    AudioSource.PlayClipAtPoint(_sound2, transform.position);
                     break;
 
                 case 1:
                     Debug.Log("end");
                     Onend.Invoke();
+                    AudioSource.PlayClipAtPoint(_sound2, transform.position);
                     break;
             }
 
         }
-
     }
 }
