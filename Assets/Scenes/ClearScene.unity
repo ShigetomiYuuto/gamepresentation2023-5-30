@@ -357,7 +357,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422557232}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -374,9 +374,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 581873193}
-  - component: {fileID: 581873192}
   - component: {fileID: 581873191}
   - component: {fileID: 581873194}
+  - component: {fileID: 581873195}
   m_Layer: 0
   m_Name: ClearUi
   m_TagString: Untagged
@@ -396,54 +396,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fae3969463f7fb489fce39b21da1d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &581873192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581873190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c25533e5ef6ace469ccbc932ecd9c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  images:
-  - {fileID: 1144597570}
-  - {fileID: 1108537657}
-  SelectColor: {r: 0.94706535, g: 0, b: 1, a: 1}
-  Onstart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 581873191}
-        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: TitleScene
-          m_BoolArgument: 0
-        m_CallState: 2
-  Onend:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 581873191}
-        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
-        m_MethodName: CloseGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _sound1: {fileID: 8300000, guid: 98aff85a453e6b04d8073b47b9c45e63, type: 3}
-  _sound2: {fileID: 8300000, guid: facdf2e98f35c7445bcba921f63b0239, type: 3}
 --- !u!4 &581873193
 Transform:
   m_ObjectHideFlags: 0
@@ -555,6 +507,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &581873195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581873190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba5e704c2c83fe4cbe061365ea8e863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 1144597570}
+  - {fileID: 1108537657}
+  SelectColor: {r: 1, g: 0, b: 0, a: 1}
+  Onstart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 581873191}
+        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TitleScene
+          m_BoolArgument: 0
+        m_CallState: 2
+  Onend:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 581873191}
+        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
+        m_MethodName: CloseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _sound1: {fileID: 8300000, guid: 98aff85a453e6b04d8073b47b9c45e63, type: 3}
+  _sound2: {fileID: 8300000, guid: facdf2e98f35c7445bcba921f63b0239, type: 3}
 --- !u!1 &1108537655
 GameObject:
   m_ObjectHideFlags: 0

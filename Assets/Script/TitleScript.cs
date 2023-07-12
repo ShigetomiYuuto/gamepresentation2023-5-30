@@ -27,7 +27,7 @@ public class TitleScript : MonoBehaviour
         images[0].color = SelectColor;
 
         _audioSource = GetComponent<AudioSource>();
-        
+
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class TitleScript : MonoBehaviour
 
         var a = input.aKey;
         var d = input.dKey;
-        space();
+        Space();
 
         if (a.wasPressedThisFrame)
         {
@@ -71,7 +71,7 @@ public class TitleScript : MonoBehaviour
         }
     }
 
-    void space()
+    void Space()
     {
         var input = Keyboard.current;
         if (input == null) return;

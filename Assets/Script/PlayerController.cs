@@ -6,51 +6,33 @@ public class PlayerController : MonoBehaviour
 {
     //移動の速度
     [SerializeField] private float _moveSpeed;
-
     //接地判定
     [SerializeField] GroundCheck _ground;
-
     //ジャンプ
     [SerializeField] private float _jumpSpeed;
-
     //体力
     [SerializeField] private int _hp;
-
     //入力された値を入れる変数
     [SerializeField] private Vector2 _moveInput;
-
     //ダッシュの加速度
     [SerializeField] private float _dashingVelocity = 14f;
-
     //ダッシュする時間
     [SerializeField] private float _dashindTime = 0.5f;
-
     [SerializeField] private float _jumpForce = 10f;
-
     //ダッシュの方向を保存している？
     private Vector2 _dashingDir;
-
     //キャラがダッシュ中か確認するためのbool値?
     private bool _isDashing;
-
     //キャラがダッシュできるか確認するためのもの?
     private bool _canDash = true;
-
     //変な線が出るやつ
     private TrailRenderer _trailRenderer;
-
     private bool _inputDash;
-
     public bool _isJumping = false;
-
     private Rigidbody2D _rb = default;
-
     private bool _isGrounded  = false;
-
     [SerializeField] GameObject _groundChecker = null;
-
     [SerializeField] GameObject _gameManager = null;
-
     public AudioClip _sound1;
     public AudioClip _sound2;
     public AudioClip _sound3;
@@ -60,10 +42,8 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _ground = _groundChecker.GetComponent<GroundCheck>();
-
         //TrailRendererを取得している
         _trailRenderer = GetComponent<TrailRenderer>();
-
         _audioSource = GetComponent<AudioSource>();
     }
 
@@ -100,11 +80,11 @@ public class PlayerController : MonoBehaviour
     }
     void Jump()
     {
-        if (_isGrounded && _isJumping)
-        {
-            _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
-            _audioSource.PlayOneShot(_sound2);
-        }
+        //if (_isGrounded && _isJumping)
+        //{
+        //    _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+        //    _audioSource.PlayOneShot(_sound2);
+        //}
     }
 
     void Dash()
@@ -151,7 +131,15 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        _isJumping = context.ReadValueAsButton();
+        if(context.started)
+        {
+            //_isJumping = context.ReadValueAsButton();
+            if (_isGrounded)
+            {
+                _rb.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+                _audioSource.PlayOneShot(_sound2);
+            }
+        }
     }
 
     public void OnDash(InputAction.CallbackContext context)
