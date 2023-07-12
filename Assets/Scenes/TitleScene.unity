@@ -264,7 +264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -398, y: 382}
+  m_AnchoredPosition: {x: -106, y: 118}
   m_SizeDelta: {x: 358.97, y: 91.7772}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192152305
@@ -289,10 +289,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e801e650c9262f741b7451fb4ec66ab2, type: 3}
-    m_FontSize: 170
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 7
+    m_MinSize: 5
     m_MaxSize: 170
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -428,8 +428,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 490, y: -20}
-  m_SizeDelta: {x: 700, y: 200}
+  m_AnchoredPosition: {x: 184, y: -10}
+  m_SizeDelta: {x: 270, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595933546
 MonoBehaviour:
@@ -504,7 +504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -743, y: 17}
+  m_AnchoredPosition: {x: -227, y: -4}
   m_SizeDelta: {x: 175.6692, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &880610232
@@ -529,7 +529,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e801e650c9262f741b7451fb4ec66ab2, type: 3}
-    m_FontSize: 100
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -584,7 +584,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 285, y: 25}
+  m_AnchoredPosition: {x: 150, y: -5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198177830
@@ -609,11 +609,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e801e650c9262f741b7451fb4ec66ab2, type: 3}
-    m_FontSize: 100
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 100
+    m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -748,7 +748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -224, y: -242}
+  m_AnchoredPosition: {x: -104, y: -70}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1276642603
@@ -773,7 +773,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e801e650c9262f741b7451fb4ec66ab2, type: 3}
-    m_FontSize: 100
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -828,8 +828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -512, y: -20}
-  m_SizeDelta: {x: 700, y: 200}
+  m_AnchoredPosition: {x: -187, y: -10}
+  m_SizeDelta: {x: 270, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530941098
 MonoBehaviour:
@@ -956,9 +956,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1934111776}
-  - component: {fileID: 1934111775}
   - component: {fileID: 1934111774}
   - component: {fileID: 1934111777}
+  - component: {fileID: 1934111778}
   m_Layer: 0
   m_Name: TitleUI
   m_TagString: Untagged
@@ -978,54 +978,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fae3969463f7fb489fce39b21da1d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1934111775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934111773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c25533e5ef6ace469ccbc932ecd9c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  images:
-  - {fileID: 1530941098}
-  - {fileID: 595933546}
-  SelectColor: {r: 0, g: 1, b: 0.82985544, a: 1}
-  Onstart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1934111774}
-        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: GameStage1
-          m_BoolArgument: 0
-        m_CallState: 2
-  Onend:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1934111774}
-        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
-        m_MethodName: CloseGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _sound1: {fileID: 8300000, guid: 98aff85a453e6b04d8073b47b9c45e63, type: 3}
-  _sound2: {fileID: 8300000, guid: facdf2e98f35c7445bcba921f63b0239, type: 3}
 --- !u!4 &1934111776
 Transform:
   m_ObjectHideFlags: 0
@@ -1137,3 +1089,51 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1934111778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934111773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba5e704c2c83fe4cbe061365ea8e863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  images:
+  - {fileID: 1530941098}
+  - {fileID: 595933546}
+  SelectColor: {r: 1, g: 0, b: 0, a: 1}
+  Onstart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1934111774}
+        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GameStage1
+          m_BoolArgument: 0
+        m_CallState: 2
+  Onend:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1934111774}
+        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
+        m_MethodName: CloseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _sound1: {fileID: 8300000, guid: 98aff85a453e6b04d8073b47b9c45e63, type: 3}
+  _sound2: {fileID: 8300000, guid: facdf2e98f35c7445bcba921f63b0239, type: 3}
