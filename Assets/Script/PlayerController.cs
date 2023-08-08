@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     //ダッシュする時間
     [SerializeField] private float _dashindTime = 0.5f;
     [SerializeField] private float _jumpForce = 10f;
+    [SerializeField] GameObject _playerSpawn;
     //ダッシュの方向を保存している？
     private Vector2 _dashingDir;
     //キャラがダッシュ中か確認するためのbool値?
@@ -51,12 +52,13 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Traps")
         {
-            Destroy(gameObject);
+            transform.position = _playerSpawn.transform.position;
         }
 
         if (collision.gameObject.CompareTag("Spring"))
         {
             _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
+            _canDash = true;
         }
     }
 

@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Replayplayer : MonoBehaviour
 {
-    [SerializeField]
-    [Tooltip("ƒvƒŒƒCƒ„[‚Ìprefab‚ğ’Ç‰Á")] private GameObject playerPrefab;
+    [SerializeField]  GameObject playerPrefab;
 
     void Update()
     {
-        GameObject _playerob = GameObject.Find(playerPrefab.name);
+       // GameObject _playerob = GameObject.Find(playerPrefab.name);
 
-        //playerob‚ª‘¶İ‚µ‚Ä‚¢‚È‚¢ê‡
-        if (_playerob == null )
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Traps")
         {
-            GameObject _newPlayerob = Instantiate(playerPrefab, transform.position, playerPrefab.transform.rotation);
-            _newPlayerob.name = playerPrefab.name;
+            transform.position = playerPrefab.transform.position;
         }
     }
 }
